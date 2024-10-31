@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới thiệu bản thân</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body class="">
+   <style>
+   </style>
+    <div id="wrapper">
+        <div id="header">
+            <div class="container d-flex justify-content-between align-items-center">
+                <img src="logo1.png" width="50" height="42">
+                <button class="name"><a href="#info">About us</a></button> 
+                <button class="name"><a href="" id="name">Thành viên 1</a></button>
+                <button class="name"><a href="" id="name">Thành viên 2</a></button>
+                <button class="name"><a href="" id="name">Thành viên 3</a> </button>
+                <button id="switch-mode"><i class="bi bi-moon-stars-fill"></i></button>
+            </div>
+        </div>
+    </div>
+        <h3 class="gradient">GIỚI THIỆU BẢN THÂN</h3>
+    <section>
+        <div class="image-container">
+            <img src="landscape-photography-tips-yosemite-valley-feature.jpg.webp" class="photo" width="400" height="500">
+                <div class="middle">
+                <div class="text"> Đào Phương Hiền </div>
+                </div> 
+                </div>
+        <div class="image-container">
+            <img src="pexels-fotios-photos-1107717.jpg" class="photo" width="400" height="500">
+                <div class="middle">
+                <div class="text"> Nguyễn Thuỳ Trang </div>
+                </div>
+                </div>
+        <div class="image-container">
+            <img src="summer-landscape-with-river.jpg" class="photo" width="400" height="500">
+                <div class="middle">
+                <div class="text"> Nguyễn Đình Tuấn Anh </div>
+                </div>
+    </section>
+
+    <section id="info">
+        <div id="mem">
+            <p> Nhóm 2</p>
+            <p> 1. Đào Phương Hiền </p>
+            <p> 2. Nguyễn Thuỳ Trang </p>
+            <p> 3. Nguyễn Đình Tuấn Anh </p>
+        </div>
+        <div id="lienhe">
+            <p><b> CONTACT </b></p>
+            <p>
+                <i class="bi bi-facebook"></i> Nhóm thiết kế web
+            </p>
+            <p>
+                <i class="bi bi-envelope"></i>  thietkeweb@gmail.com
+            </p>
+            <p> 
+                <i class="bi bi-instagram"></i> thietke_web
+            </p> 
+            <p> 
+                <i class="bi bi-telephone-fill"></i> 0567382937
+            </p> 
+        </div>
+    </section>
+    
+     <section id="contact">
+        <h2>CONTACT US</h2>
+        <form>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+    <footer>
+    </footer>
+</body>
+<script> 
+    const body = document.body;
+    const switch_mode = document.querySelector('#switch-mode i');
+    //load mode
+    let mode = localStorage.getItem('darkmode');
+    //console.log(mode);
+    if (mode=='true'){
+        body.classList.add('dark');
+        switch_mode.className="bi-brightness-high-fill";
+    }
+    switch_mode.addEventListener('click',() =>{
+        switch_mode.classList.toggle('bi-moon-stars-fill');
+        switch_mode.classList.toggle('bi-brightness-high-fill');
+        let mode=body.classList.toggle('dark');
+        //lưu mode vd khi đang để tối load lại vẫn. ở chế độ tối.
+        //save mode
+        //console.log(mode);
+       localStorage.setItem('darkmode',mode);
+
+    });
+</script>
+</html>
